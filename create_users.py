@@ -57,13 +57,14 @@ def create_user(sso_id_storeid,
 if __name__ == '__main__':
     csv_file_path = input("Enter the path of the CSV file: ")
     sso_id_storeid = input ("Enter the SSO Identity Store ID: ")
+    group_name = input("Enter the group name: ")
+    
     with open(csv_file_path, mode='r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
             username = row['username']
             first_name = row['firstName']
             last_name = row['lastName']
-            group_name = 'Students'
             email = row['emailAddress']
             response = create_user(sso_id_storeid,
             username,
