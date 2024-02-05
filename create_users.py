@@ -13,7 +13,7 @@ def create_user(sso_id_storeid,
     group_name,
     email):
 
-    display_name = "{} {}".format(given_name, family_name)
+    display_name = f"{given_name} {family_name}"
     create_user_response = client.create_user(
         IdentityStoreId=sso_id_storeid,
         UserName=user_name,
